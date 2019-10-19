@@ -28,17 +28,17 @@ public class Util {
         }
     }
 
-    public static int compileProgram(String vertexCode, String fragmentCode) {
+    public static int compileProgram(String[] vertexCode, String[] fragmentCode) {
 
         checkGlError("Start of compileProgram");
         // prepare shaders and OpenGL program
         int vertexShader = GLES20.glCreateShader(GLES20.GL_VERTEX_SHADER);
-        GLES20.glShaderSource(vertexShader, vertexCode);
+        GLES20.glShaderSource(vertexShader, TextUtils.join("\n", vertexCode));
         GLES20.glCompileShader(vertexShader);
         checkGlError("Start of compileProgram");
 
         int fragmentShader = GLES20.glCreateShader(GLES20.GL_FRAGMENT_SHADER);
-        GLES20.glShaderSource(fragmentShader, fragmentCode);
+        GLES20.glShaderSource(fragmentShader, TextUtils.join("\n", fragmentCode));
         GLES20.glCompileShader(fragmentShader);
         checkGlError("Compile fragment shader");
 
@@ -59,6 +59,11 @@ public class Util {
         }
 
         return program;
+    }
+
+    public static int sign(float x)
+    {
+        return x>0?1:-1;
     }
 
 }

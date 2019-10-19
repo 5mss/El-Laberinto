@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
+        android:onClick="enterMaze"
         android:text="@string/start"
         android:textColor="@color/white"
         android:textSize="36sp"

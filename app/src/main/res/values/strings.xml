@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">El Laberinto</string>
+    <string name="mazeActivity_name">The Maze Java</string>
     <string name="start">Start!</string>
 </resources>
